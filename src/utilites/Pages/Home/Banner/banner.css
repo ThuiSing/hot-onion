@@ -1,0 +1,12 @@
+.main-banner {
+  width: 100%;
+  background: url("../../../images/bannerbackground.jpg") no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  /* height: 80vh; */
+  background-color: red;
+}
+.btn {
+  background: #f91944;
+  color: #fff;
+}

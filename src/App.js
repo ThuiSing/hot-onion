@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import OrderProvider from "./utilites/context/OrderProvider";
+import Cart from "./utilites/Pages/Cart/Cart";
+import FoodItemDetails from "./utilites/Pages/FoodItemDetails/FoodItemDetails";
+import Home from "./utilites/Pages/Home/Home/Home";
+import Login from "./utilites/Pages/Login/Login";
+import Footer from "./utilites/Pages/Shared/Footer/Footer";
+import Header from "./utilites/Pages/Shared/Header/Header";
+import SignUp from "./utilites/Pages/SignUp/SignUp";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <OrderProvider>
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
+            <Route path="/food/:id">
+              <FoodItemDetails />
+            </Route>
+            <Route path="/cart">
+              <Cart />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/sign-up">
+              <SignUp />
+            </Route>
+          </Switch>
+          <Footer />
+        </OrderProvider>
+      </Router>
     </div>
   );
 }
