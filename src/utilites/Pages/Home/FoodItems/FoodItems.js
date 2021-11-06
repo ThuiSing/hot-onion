@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import useItems from "../../../Hooks/useItems";
 import FoodItem from "../FoodItem/FoodItem";
 
 const FoodItems = () => {
@@ -9,15 +8,14 @@ const FoodItems = () => {
 
   //fetch data from public
   useEffect(() => {
-    const fetchdata = async () => {
+    const fetchData = async () => {
       const res = await fetch("/foodItems.json");
       const data = await res.json();
       setItems(data);
       setNewItems(data.filter((item) => item.category === "Breakfast"));
     };
-    fetchdata();
+    fetchData();
   }, []);
-
   //   console.log(items);
 
   //style

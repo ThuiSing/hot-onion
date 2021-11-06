@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import btnIcon from "../../../images/icon/arrow-right.png";
 
 const ChooseItems = ({ item }) => {
@@ -15,12 +16,12 @@ const ChooseItems = ({ item }) => {
         <div>
           <h3 className="text-2xl text-medium">{serviceName}</h3>
           <p className="text-gray-600 my-4">{description}</p>
-          <a className="flex items-center text-blue-600" href="#">
+          <Link className="flex items-center text-blue-600" to="/">
             See more
             <span>
               <img src={btnIcon} alt="" width="50" />
-            </span>{" "}
-          </a>
+            </span>
+          </Link>
         </div>
       </div>
     </div>
