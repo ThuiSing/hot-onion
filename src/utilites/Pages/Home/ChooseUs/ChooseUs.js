@@ -35,14 +35,14 @@ const ChooseUs = () => {
     },
   ];
   return (
-    <div className=" py-14 con container mx-auto">
+    <div className=" py-14 con container mx-auto px-4 md:px-0">
       <h2 className="text-4xl font-medium">Why you choose us</h2>
       <p className="md:w-2/5 my-6 text-gray-600">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem, in
         omnis quaerat eligendi molestiae ratione nesciunt assumenda voluptatum
         asperiores nam?
       </p>
-      <div className="grid grid-cols-3 gap-6 mt-14">
+      <div className="grid md:grid-cols-3 gap-6 mt-14">
         {chooseUsData.map((item) => (
           <ChooseItem key={item.id} item={item} />
         ))}

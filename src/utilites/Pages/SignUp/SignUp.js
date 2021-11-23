@@ -4,8 +4,8 @@ import logo from "../../images/logo2.png";
 
 const SignUp = () => {
   return (
-    <div className="login container flex justify-center items-center py-12">
-      <div className="md:w-1/3 bg-white px-4 py-8 rounded">
+    <div className="login flex justify-center items-center py-12 h-screen px-4">
+      <div className="md:w-1/2 lg:w-1/3 bg-white px-4 py-8 rounded">
         <div>
           <img className="w-80 mx-auto" src={logo} alt="" />
         </div>

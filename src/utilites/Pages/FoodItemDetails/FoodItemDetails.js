@@ -23,12 +23,15 @@ const FoodItemDetails = () => {
       : quantity > 1 && setQuantity(quantity - 1);
   };
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto py-24 px-4 md:px-0">
       {items
         ?.filter((item) => item.id === parseInt(id))
         ?.map((food) => (
-          <div key={food.id} className=" flex justify-between items-center">
-            <div className="md:w-1/2">
+          <div
+            key={food.id}
+            className=" flex flex-col md:flex-row justify-between items-center"
+          >
+            <div className="md:w-1/2 order-2 md:order-1">
               <h2 className="text-6xl font-semibold">{food?.name}</h2>
               <p className="md:w-2/3 my-4">{food?.description}</p>
               <div className="text-4xl font-semibold flex items-center  ">
@@ -101,7 +104,7 @@ const FoodItemDetails = () => {
               </div>
             </div>
             <div className="p-4">
-              <img className="w-4/5" src={food?.img} alt="" />
+              <img className="w-4/5 mx-auto" src={food?.img} alt="" />
             </div>
           </div>
         ))}

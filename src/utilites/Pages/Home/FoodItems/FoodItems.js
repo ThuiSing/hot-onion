@@ -16,7 +16,6 @@ const FoodItems = () => {
     };
     fetchData();
   }, []);
-  //   console.log(items);
 
   //style
   const handleAlls = (category) => {
@@ -28,7 +27,7 @@ const FoodItems = () => {
   };
   // console.log(menu);
   return (
-    <div className="container mx-auto py-10">
+    <div className="container mx-auto py-16 px-4 md:px-0">
       <div className="flex justify-evenly mx-auto md:w-2/4 ">
         <h4
           onClick={() => handleAlls("Breakfast")}
@@ -61,7 +60,7 @@ const FoodItems = () => {
           Dinner
         </h4>
       </div>
-      <div className="grid grid-cols-3 gap-8 mt-16">
+      <div className="grid md:grid-cols-3 gap-8 mt-16">
         {newItems.map((item) => (
           <FoodItem key={item.id} item={item} />
         ))}

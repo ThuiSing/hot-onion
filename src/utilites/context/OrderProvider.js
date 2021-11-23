@@ -11,9 +11,15 @@ const OrderProvider = ({ children }) => {
 
   // add order function
   const handleOrder = (food) => {
-    setOrder((prevValue) => {
-      return [...prevValue, food];
-    });
+    console.log(food);
+    const alreadyAdded = order.find((item) => item.id === food.id);
+    if (alreadyAdded) {
+      alreadyAdded["quantity"] = alreadyAdded["quantity"] + food["quantity"];
+    } else {
+      setOrder((prevValue) => {
+        return [...prevValue, food];
+      });
+    }
   };
 
   //remove order from cart
